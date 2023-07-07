@@ -1,10 +1,10 @@
 import React from 'react';
 import { PanelProps } from '@grafana/data';
-import { SimpleOptions } from 'types';
+import { PanelOptions } from 'types';
 import { css, cx } from '@emotion/css';
 import { useStyles2, useTheme2 } from '@grafana/ui';
 
-interface Props extends PanelProps<SimpleOptions> {}
+interface Props extends PanelProps<PanelOptions> {}
 
 const getStyles = () => {
   return {
@@ -26,7 +26,7 @@ const getStyles = () => {
   };
 };
 
-export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) => {
+export const imagePanel: React.FC<Props> = ({ options, data, width, height }) => {
   const theme = useTheme2();
   const styles = useStyles2(getStyles);
   return (
@@ -51,11 +51,6 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
           <circle style={{ fill: theme.colors.primary.main }} r={100} />
         </g>
       </svg>
-
-      <div className={styles.textBox}>
-        {options.showSeriesCount && <div>Number of series: {data.series.length}</div>}
-        <div>Text option value: {options.text}</div>
-      </div>
     </div>
   );
 };
