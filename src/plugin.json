@@ -10,16 +10,26 @@
       "name": "Test inc"
     },
     "logos": {
-      "small": "img/logo.svg",
-      "large": "img/logo.svg"
+      "small": "img/green_book.svg",
+      "large": "img/green_book.svg"
     },
-    "links": [],
-    "screenshots": [],
+    "links": [
+      {
+        "name": "Github",
+        "url": "https://github.com/EricHungGA/test-grafana-plugin"
+      }
+    ],
+    "screenshots": [
+      {
+        "name": "test_screenshot",
+        "path": "img/heart.png"
+      }
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
   "dependencies": {
-    "grafanaDependency": ">=9.5.3",
+    "grafanaDependency": ">=9.0.0",
     "plugins": []
   }
 }
