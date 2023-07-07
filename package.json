@@ -1,22 +1,15 @@
 {
-  "name": "first-test",
-  "version": "1.0.0",
-  "description": "Display image using url as a test plugin",
-  "scripts": {
-    "build": "webpack -c ./.config/webpack/webpack.config.ts --env production",
-    "dev": "webpack -w -c ./.config/webpack/webpack.config.ts --env development",
-    "test": "jest --watch --onlyChanged",
-    "test:ci": "jest --passWithNoTests --maxWorkers 4",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint --cache --ignore-path ./.gitignore --ext .js,.jsx,.ts,.tsx .",
-    "lint:fix": "npm run lint -- --fix",
-    "e2e": "npm exec cypress install && npm exec grafana-e2e run",
-    "e2e:update": "npm exec cypress install && npm exec grafana-e2e run --update-screenshots",
-    "server": "docker-compose up --build",
-    "sign": "npx --yes @grafana/sign-plugin@latest"
-  },
   "author": "Test inc",
-  "license": "Apache-2.0",
+  "dependencies": {
+    "@emotion/css": "^11.11.2",
+    "@grafana/data": "9.5.3",
+    "@grafana/runtime": "9.5.3",
+    "@grafana/ui": "9.5.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "tslib": "2.5.3"
+  },
+  "description": "Display image using url as a test plugin",
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@grafana/e2e": "9.5.3",
@@ -55,14 +48,21 @@
   "engines": {
     "node": ">=16"
   },
-  "dependencies": {
-    "@emotion/css": "^11.11.2",
-    "@grafana/data": "9.5.3",
-    "@grafana/runtime": "9.5.3",
-    "@grafana/ui": "9.5.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "tslib": "2.5.3"
+  "license": "Apache-2.0",
+  "name": "first-test",
+  "packageManager": "npm@9.3.1",
+  "scripts": {
+    "build": "webpack -c ./.config/webpack/webpack.config.ts --env production",
+    "dev": "webpack -w -c ./.config/webpack/webpack.config.ts --env development",
+    "e2e": "npm exec cypress install && npm exec grafana-e2e run",
+    "e2e:update": "npm exec cypress install && npm exec grafana-e2e run --update-screenshots",
+    "lint": "eslint --cache --ignore-path ./.gitignore --ext .js,.jsx,.ts,.tsx .",
+    "lint:fix": "npm run lint -- --fix",
+    "server": "docker-compose up --build",
+    "sign": "npx --yes @grafana/sign-plugin@latest",
+    "test": "jest --watch --onlyChanged",
+    "test:ci": "jest --maxWorkers 4 --coverage",
+    "typecheck": "tsc --noEmit"
   },
-  "packageManager": "npm@9.3.1"
+  "version": "1.0.0"
 }

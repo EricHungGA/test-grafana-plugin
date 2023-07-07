@@ -9,7 +9,7 @@ export const plugin = new PanelPlugin<PanelOptions>(ImagePanel).setPanelOptions(
       name: 'Field name',
       description: 'Name of the field with URL. If not specified, first field will be taken.',
       settings: {
-        filter: (f:Field) => f.type === FieldType.string,
+        filter: (f: Field) => f.type === FieldType.string,
         noFieldsMessage: 'No strings fields found',
       },
     })
