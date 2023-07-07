@@ -1,12 +1,16 @@
-import { PanelPlugin } from '@grafana/data';
+import { Field, FieldType, PanelPlugin } from '@grafana/data';
 import { PanelOptions } from './types';
-import { imagePanel } from './components/imagePanel/imagePanel';
+import { ImagePanel } from './components/imagePanel/imagePanel';
 
-export const plugin = new PanelPlugin<PanelOptions>(imagePanel).setPanelOptions((builder) => {
+export const plugin = new PanelPlugin<PanelOptions>(ImagePanel).setPanelOptions((builder) => {
   return builder
-    .addTextInput({
-      path: 'url',
-      name: 'Image URL',
-      defaultValue: 'https:// ',
+    .addFieldNamePicker({
+      path: 'name',
+      name: 'Field name',
+      description: 'Name of the field with URL. If not specified, first field will be taken.',
+      settings: {
+        filter: (f:Field) => f.type === FieldType.string,
+        noFieldsMessage: 'No strings fields found',
+      },
     })
 });

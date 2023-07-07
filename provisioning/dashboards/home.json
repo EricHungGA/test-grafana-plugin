@@ -38,7 +38,8 @@
       "options": {
         "seriesCountSize": "sm",
         "showSeriesCount": false,
-        "text": "Description for my first grafana panel"
+        "text": "Description for my first grafana panel",
+        "url": "https://media.self.com/photos/5b75ad5728dfab53ee567688/4:3/w_2560%2Cc_limit/GettyImages-614938268.jpg"
       },
       "title": "Blue Moon",
       "type": "testinc-firsttest-panel"
